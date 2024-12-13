@@ -41,14 +41,14 @@ public class User {
     @NonNull
     @NotEmpty
     @ElementCollection(fetch = FetchType.EAGER)
-    private Set<Role> roles;
-
-    public User(String username, String password, String firstName, String lastName, String email) {
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
+    private Set<String> roles;
+//
+//    public User(String username, String password, String firstName, String lastName, String email) {
+//        this.username = username;
+//        this.password = password;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.email = email;
+//    }
 }
 

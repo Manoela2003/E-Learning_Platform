@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
         }
 
         userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        userDto.setRoles(Set.of(Role.STUDENT));
+        userDto.setRoles(Set.of(Role.STUDENT.getDescription()));
 
         return userRepository.save(EntityMapper.mapCreateDtoToEntity(userDto, User.class));
     }

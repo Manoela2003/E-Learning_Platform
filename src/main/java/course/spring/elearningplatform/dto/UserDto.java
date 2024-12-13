@@ -30,5 +30,5 @@ public class UserDto {
     @Email(message = "Email should be valid")
     private String email;
 
-    private Set<Role> roles;
+    private Set<String> roles;
 }
