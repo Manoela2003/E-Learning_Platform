@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -34,11 +35,9 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@Valid UserDto userDto, BindingResult result, RedirectAttributes redirectAttributes, Model model) {
+    public String registerUser(@Valid @ModelAttribute("user") UserDto userDto, BindingResult result, RedirectAttributes redirectAttributes, Model model) {
         if (result.hasErrors()) {
-            redirectAttributes.addFlashAttribute("user", userDto);
-            redirectAttributes.addFlashAttribute(MODEL_KEY_PREFIX + "user", result);
-            return "redirect:register";
+            return "register";
         }
 
         userService.createUser(userDto);
