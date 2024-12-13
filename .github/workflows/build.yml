@@ -20,6 +20,7 @@ jobs:
           distribution: 'zulu'
       - name: Build
         # Those are the commands which are ran on the GitHub Virtual Machine.
+        # `test` task disabled because using SpringBootTest.
         run: |
           chmod +x gradlew
-          ./gradlew build --info
+          ./gradlew build -x test --info
