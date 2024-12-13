@@ -18,7 +18,7 @@ public class SecurityConfig {
             )
             .formLogin(form -> form
                 .loginPage("/login")
-                .defaultSuccessUrl("/dashboard", true) // Redirect after successful login
+                .defaultSuccessUrl("/hi", true) // Redirect after successful login
                 .permitAll()
             )
             .logout(logout -> logout
